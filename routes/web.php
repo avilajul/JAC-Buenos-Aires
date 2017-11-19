@@ -11,6 +11,16 @@
 |
 */
 
+Route::get('/', 'PagesController@getIndex');
+Route::get('contactenos', 'PagesController@getContacto');
+Route::get('quienes_somos', 'PagesController@getQuienesSomos');
+Route::get('normatividad_comunal', 'PagesController@getNormatividadComunal');
+Route::get('organizacion', 'PagesController@getOrganizacion');
+Route::get('sitios_interes', 'PagesController@getSitiosInteres');
+Route::get('cronograma', 'PagesController@getCronograma');
+Route::resource('noticias', 'NoticiaController');
+
+/*
 Route::get('/', function () {
     return view('home');
 });
@@ -38,7 +48,7 @@ Route::get('cronograma', function () {
     return view('cronograma');
 });
 
-
 Route::get('welcome', function () {
     return view('welcome');
 });
+*/

@@ -15,26 +15,29 @@
 
 /* Este es para cambiar el color de la línea del campo cuando lo seleccionas */
 .input-field input[type=text]:focus {
-  border-bottom: 1px solid #E57373; /* El #E57373 es el color de la línea */
-  box-shadow: 0 1px 0 0 #E57373; /* Y acá, de la pequeña sombra que genera */
+  border-bottom: 1px solid #4db6ac; /* El #E57373 es el color de la línea */
+  box-shadow: 0 1px 0 0 #4db6ac; /* Y acá, de la pequeña sombra que genera */
 }
+
 
 /* Este es para cambiar el color de la línea del campo cuando lo seleccionas */
 .input-field input[type=password]:focus {
-  border-bottom: 1px solid #E57373; /* El #E57373 es el color de la línea */
-  box-shadow: 0 1px 0 0 #E57373; /* Y acá, de la pequeña sombra que genera */
+  border-bottom: 1px solid #4db6ac; /* El #E57373 es el color de la línea */
+  box-shadow: 0 1px 0 0 #4db6ac; /* Y acá, de la pequeña sombra que genera */
 }
 
 /* Si usas la propiedad validate, el color de la línea al validar, será este */
 .input-field input[type=text].valid {
-  border-bottom: 1px solid #E57373;
+  border-bottom: 1px solid #FDDADA;
   box-shadow: 0 1px 0 0 #E57373;
 }
 
+
+
 /* Y este será el color en el caso que se tome como inválido */
 .input-field input[type=text].invalid {
-  border-bottom: 1px solid green;
-  box-shadow: 0 1px 0 0 green;
+  border-bottom: 1px solid #E00000;
+  box-shadow: 0 1px 0 0 #E00000;
 }
 
 /* Pôr último, este cambia el color al ícono cuando entras a un campo */
