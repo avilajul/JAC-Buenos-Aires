@@ -8,18 +8,17 @@
       <div class="card ">
         <div class="card-content">
           <h4>Crear nueva noticia</h4>
-          {!! Form::open(['route' => 'noticias.store']) !!}
+          {!! Form::open([ 'id'=>'formNoticia', 'route' => 'noticias.store']) !!}
             <div class="row">
               <div class="input-field col s12 m6 l10">
                 <i class="material-icons prefix">title</i>
-                {{ Form::label('title', 'Titulo') }}
-
-                {{ Form::text('title', null, array('id'=>'input_text', 'data-length'=> '255')) }}
+                {{ Form::label('campo_titulo', 'Titulo') }}
+                {{ Form::text('campo_titulo', null, array('id'=>'campo_titulo', 'name' => 'campo_titulo', 'data-validation' =>'text', 'data-content' => 'El campo Titulo es obligatorio', 'data-length'=> '60')) }}
               </div>
               <div class="input-field col s12 m6 l12">
                 <i class="material-icons prefix">subject</i>
-                {{ Form::label('body', 'Contenido') }}
-                {{ Form::textarea('body', null, array('class'=> 'validate, materialize-textarea')) }}
+                {{ Form::label('campo_contenido', 'Contenido') }}
+                {{ Form::textarea('campo_contenido', null, array( 'id'=>'campo_contenido', 'name'=>'campo_contenido', 'data-validation' =>'text', 'data-content' => 'El campo Contenido es obligatorio', 'class'=> 'materialize-textarea')) }}
               </div>
             </div>
         </div>

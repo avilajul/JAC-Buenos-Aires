@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Noticia;
+use Session;
 
 class NoticiaController extends Controller
 {
@@ -15,7 +16,11 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        //
+        //crea una variable y almacena todas las publicaciones de noticias en ella desde la base de datos
+        $noticias = Noticia::all();
+
+        //return una vista y pasa a la variable anterior
+        return view('noticias.index')->withNoticias($noticias);
     }
 
     /**
@@ -49,6 +54,8 @@ class NoticiaController extends Controller
 
         $noticia->save();
 
+        Session::flash('success', 'La noticia se creó satisfactoriamente');
+
         //Redireccionar  a otra pagina
         return redirect()->route('noticias.show', $noticia->id);
     }
@@ -61,6 +68,8 @@ class NoticiaController extends Controller
      */
     public function show($id)
     {
+      $noticia = Noticia::find($id);
+      return view('noticias.show')->withNotica($noticia);
         //
     }
 
@@ -72,7 +81,10 @@ class NoticiaController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Busca la publicación en la base de datos y la guarda en una variable
+        $noticia = Noticia::find($id);
+        // retorna la vista y pasa la variable previamente creada.
+        return view('noticia.edit')->withNotica($noticia);
     }
 
     /**

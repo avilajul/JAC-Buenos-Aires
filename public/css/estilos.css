@@ -27,18 +27,21 @@
 }
 
 /* Si usas la propiedad validate, el color de la línea al validar, será este */
+/*
 .input-field input[type=text].valid {
   border-bottom: 1px solid #FDDADA;
   box-shadow: 0 1px 0 0 #E57373;
 }
-
+*/
 
 
 /* Y este será el color en el caso que se tome como inválido */
+/*
 .input-field input[type=text].invalid {
   border-bottom: 1px solid #E00000;
   box-shadow: 0 1px 0 0 #E00000;
 }
+*/
 
 /* Pôr último, este cambia el color al ícono cuando entras a un campo */
 .input-field .prefix.active {
@@ -60,4 +63,17 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+/** FIXES for error messages https://github.com/Dogfalo/materialize/issues/1562*/
+label {
+    width: 100%;
+}
+.input-field label {
+    font-size: 0.8rem;
+    -webkit-transform: translateY(-140%);
+    -moz-transform: translateY(-140%);
+    -ms-transform: translateY(-140%);
+    -o-transform: translateY(-140%);
+    transform: translateY(-140%);
 }
